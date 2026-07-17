@@ -35,7 +35,425 @@
     background:var(--guinda);
     display:flex;align-items:center;justify-content:space-between;
     padding:.7rem 1.4rem;
+    box-shadow:0 2px 10px rgba(38,32,35,.25);<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller Teórico-Práctico en Turbulencias 2026 · CIATEQ</title>
+<meta name="description" content="Taller Teórico-Práctico en Turbulencias 2026. CIATEQ A.C., 24 al 26 de agosto del 2026. Modalidad presencial y en línea. Inscripciones abiertas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --guinda:#782E44;
+    --guinda-oscuro:#4A1C2B;
+    --gris:#6D6E71;
+    --gris-claro:#A7A9AC;
+    --tinta:#262023;
+    --gris-suave:#F6F4F1;
+    --blanco:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Source Serif 4",Georgia,serif;
+    color:var(--tinta);
+    background:var(--blanco);
+    line-height:1.65;
+    font-size:17px;
+  }
+  h1,h2,h3,.etiqueta,.btn,nav{font-family:"Archivo",Arial,sans-serif}
+
+  /* ---------- Navegación ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--guinda);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.7rem 1.4rem;
     box-shadow:0 2px 10px rgba(38,32,35,.25);
+  }
+  nav .marca{color:var(--blanco);font-weight:700;font-size:.95rem;letter-spacing:.02em}
+  nav .marca span{color:var(--gris-claro)}
+  nav ul{display:flex;gap:1.4rem;list-style:none}
+  nav a{color:var(--blanco);text-decoration:none;font-size:.85rem;font-weight:600}
+  nav a:hover,nav a:focus-visible{color:var(--gris-claro)}
+  nav .solo-escritorio{display:flex}
+  @media(max-width:720px){nav .solo-escritorio{display:none}}
+
+  /* ---------- Héroe ---------- */
+  header.heroe{
+    position:relative;overflow:hidden;
+    background:linear-gradient(160deg,var(--guinda) 0%,var(--guinda-oscuro) 100%);
+    color:var(--blanco);
+    padding:5rem 1.5rem 4.5rem;
+    text-align:center;
+  }
+  .heroe svg.vortices{
+    position:absolute;inset:0;width:100%;height:100%;
+    opacity:.5;pointer-events:none;
+  }
+  .heroe .contenido{position:relative;max-width:860px;margin:0 auto}
+  .etiqueta{
+    display:inline-block;
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gris-claro);
+    border:1px solid var(--gris-claro);
+    padding:.35rem .9rem;border-radius:2rem;
+    margin-bottom:1.6rem;
+  }
+  .heroe h1{
+    font-weight:900;
+    font-size:clamp(2.1rem,5.5vw,3.6rem);
+    line-height:1.08;
+    letter-spacing:-.015em;
+    margin-bottom:1.2rem;
+  }
+  .heroe h1 em{font-style:normal;color:var(--gris-claro)}
+  .heroe p.bajada{
+    font-size:1.1rem;max-width:560px;margin:0 auto 2rem;
+    color:#EFE6E9;
+  }
+  .datos-clave{
+    display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:2.4rem;
+  }
+  .datos-clave span{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(167,169,172,.45);
+    padding:.45rem 1rem;border-radius:.4rem;
+    font-family:"Archivo",sans-serif;font-size:.88rem;font-weight:600;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--guinda);color:var(--blanco);
+    font-weight:700;font-size:1rem;
+    padding:.9rem 2.2rem;border-radius:.45rem;
+    text-decoration:none;
+    transition:transform .15s ease,background .15s ease;
+  }
+  .btn:hover,.btn:focus-visible{background:#5C1F33;transform:translateY(-2px)}
+  .heroe .btn:not(.secundario),.banda-cta .btn{background:var(--blanco);color:var(--guinda)}
+  .heroe .btn:not(.secundario):hover,.banda-cta .btn:hover{background:#EFE9EB}
+  .btn.secundario{
+    background:transparent;border:2px solid var(--gris-claro);color:var(--gris-claro);
+    margin-left:.6rem;
+  }
+  .btn.secundario:hover{background:rgba(167,169,172,.12)}
+
+  /* ---------- Secciones ---------- */
+  section{padding:4.2rem 1.5rem}
+  .caja{max-width:960px;margin:0 auto}
+  section h2{
+    color:var(--guinda);
+    font-weight:900;font-size:clamp(1.5rem,3.4vw,2.1rem);
+    letter-spacing:-.01em;
+    margin-bottom:1.6rem;
+  }
+  section.alterna{background:var(--gris-suave)}
+  .dos-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+  @media(max-width:760px){.dos-col{grid-template-columns:1fr}}
+  #presentacion .caja{max-width:1100px}
+  #presentacion .dos-col{grid-template-columns:1.8fr 1fr}
+  #presentacion p{text-align:justify}
+  
+
+  /* ---------- Línea de tiempo ---------- */
+  .fechas{list-style:none;border-left:3px solid var(--gris);padding-left:1.6rem;display:grid;gap:1.5rem}
+  .fechas li{position:relative}
+  .fechas li::before{
+    content:"";position:absolute;left:-1.95rem;top:.4rem;
+    width:.8rem;height:.8rem;border-radius:50%;
+    background:var(--guinda);border:2.5px solid var(--gris-claro);
+  }
+  .fechas .cuando{
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:.82rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--gris);
+    display:block;
+  }
+  .fechas .que{font-size:1.06rem;font-weight:600;color:var(--tinta)}
+  .fechas .detalle{font-size:.94rem;color:#5C5257}
+
+  /* ---------- Programa ---------- */
+  .dias{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  @media(max-width:760px){.dias{grid-template-columns:1fr}}
+  .dia{
+    background:var(--blanco);
+    border:1px solid #E4DED8;border-top:5px solid var(--guinda);
+    border-radius:.5rem;
+    padding:1.4rem 1.3rem;
+    box-shadow:0 3px 12px rgba(38,32,35,.06);
+  }
+  .dia h3{color:var(--guinda);font-size:1.02rem;font-weight:700;margin-bottom:.3rem}
+  .dia .fecha-dia{
+    font-family:"Archivo",sans-r;font-size:.78rem;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--gris);
+    display:block;margin-bottom:.7rem;
+  }
+  .dia ul{list-style:none;display:grid;gap:.45rem;font-size:.93rem}
+  .dia li{padding-left:1rem;position:relative}
+  .dia li::before{content:"";position:absolute;left:0;top:.55em;width:.35rem;height:.35rem;background:var(--gris);border-radius:50%}
+
+  /* ---------- Pósteres ---------- */
+  .tarjeta-poster{
+    background:var(--guinda);color:#F3EAEE;
+    border-radius:.6rem;padding:1.8rem 1.6rem;
+  }
+  .tarjeta-poster h3{color:var(--gris-claro);font-size:1.05rem;margin-bottom:.6rem}
+  .tarjeta-poster p{font-size:.95rem}
+  .lista-requisitos{list-style:none;display:grid;gap:.6rem;margin-top:.4rem}
+  .lista-requisitos li{padding-left:1.5rem;position:relative}
+  .lista-requisitos li::before{
+    content:"✓";position:absolute;left:0;color:var(--gris);font-weight:700;
+    font-family:"Archivo",sans-serif;
+  }
+
+  /* ---------- Banda de inscripción ---------- */
+  .banda-cta{
+    background:linear-gradient(120deg,var(--guinda-oscuro),var(--guinda));
+    color:var(--blanco);text-align:center;
+  }
+  .banda-cta h2{color:var(--blanco)}
+  .banda-cta p{max-width:560px;margin:0 auto 1.8rem;color:#EFE6E9}
+
+  /* ---------- Contacto / pie ---------- */
+  .contacto p{margin-bottom:.5rem}
+  .contacto strong{font-family:"Archivo",sans-serif;font-weight:700;color:var(--guinda)}
+  footer{
+    background:var(--guinda-oscuro);color:#D9C9CF;
+    text-align:center;font-size:.85rem;
+    padding:1.6rem 1rem;
+  }
+  footer span{color:var(--gris-claro)}
+
+  a.enlace{color:var(--guinda);font-weight:600}
+  a.enlace:hover{color:var(--gris)}
+
+  /* ---------- Animación de vórtices ---------- */
+  .vortices path{
+    fill:none;stroke:var(--gris-claro);stroke-width:1.4;
+    stroke-dasharray:6 14;
+    animation:fluir 26s linear infinite;
+  }
+  .vortices path:nth-child(2){stroke-width:1;opacity:.65;animation-duration:34s}
+  .vortices path:nth-child(3){stroke-width:.8;opacity:.4;animation-duration:44s;animation-direction:reverse}
+  .vortices path:nth-child(4){stroke-width:1.1;opacity:.55;animation-duration:30s}
+  @keyframes fluir{to{stroke-dashoffset:-400}}
+  @media(prefers-reduced-motion:reduce){
+    .vortices path{animation:none}
+    html{scroll-behavior:auto}
+    .btn:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Navegación principal">
+  <div class="marca">CIATEQ <span>·</span> Turbulencias 2026</div>
+  <ul class="solo-escritorio">
+    <li><a href="#presentacion">Presentación</a></li>
+    <li><a href="#fechas">Fechas</a></li>
+    <li><a href="#programa">Programa</a></li>
+    <li><a href="#posteres">Pósteres</a></li>
+    <li><a href="#inscripcion">Inscripción</a></li>
+    <li><a href="#sede">Sede</a></li>
+  </ul>
+</nav>
+
+<header class="heroe">
+  <!-- Calle de vórtices: guiño a von Kármán -->
+  <svg class="vortices" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,120 C150,60 250,190 420,130 S700,50 880,140 S1100,210 1240,120"/>
+    <path d="M-20,240 C180,180 300,310 480,250 S760,160 940,260 S1140,330 1240,240"/>
+    <path d="M-20,360 C160,300 280,430 450,370 S720,280 900,380 S1120,440 1240,360"/>
+    <path d="M-20,460 C200,410 320,520 500,470 S780,390 960,480 S1150,520 1240,460"/>
+  </svg>
+  <div class="contenido">
+    <span class="etiqueta">CIATEQ </span>
+    <h1>Taller Teórico-Práctico en <em>Turbulencias</em> 2026</h1>
+    <p class="bajada">Tres días de teoría, práctica y presentación de trabajos en torno a la dinámica de flujos turbulentos, con expertos y estudiantes de posgrado.</p>
+    <div class="datos-clave">
+      <span> 24 al 26 de agosto del 2026</span>
+      <span> Presencial y en línea</span>
+      <span> <b> SIN COSTO <b> </span>
+    </div>
+    <div class="datos-clave">
+      <span> CIATEQ Retablo, San Agustín del Retablo 150, Constituyentes Fovissste, 76150 Santiago de Querétaro, Querétaro</span>
+    </div>
+    <a class="btn" href="https://forms.office.com/r/fpPkiBpXEu">Inscríbete aquí</a>
+  </div>
+</header>
+
+<section id="presentacion">
+  <div class="caja dos-col">
+    <div>
+      <h2>Presentación</h2>
+      <p>El Taller Teórico-Práctico en Turbulencia es un espacio de encuentro académico diseñado para reunir a investigadores, profesores, estudiantes y profesionales interesados en la dinámica de fluidos, con el propósito de compartir conocimientos, discutir avances recientes y fortalecer la formación científica mediante actividades teóricas y experimentales en temas de frontera.<p>
+      <p>Durante tres días, investigadores nacionales e internacionales impartirán conferencias especializadas y dirigirán talleres prácticos enfocados en la experimentación, visualización y simulación de fenómenos turbulentos, permitiendo a los participantes conocer tanto los fundamentos físicos como las metodologías empleadas en la investigación contemporánea.
+Más allá de su carácter académico, este evento busca acercar la ciencia y la tecnología a una comunidad amplia de estudiantes, docentes y personas interesadas en comprender cómo se genera el conocimiento científico y cuál es su impacto en la solución de problemas tecnológicos. En este sentido, el taller constituye un espacio de diálogo directo entre investigadores y asistentes, donde las preguntas, la discusión abierta y el intercambio de experiencias forman parte esencial del proceso de aprendizaje.<p>
+      <p>Esta iniciativa refleja el compromiso de CIATEQ con la formación de recursos humanos, la divulgación del conocimiento científico y el fortalecimiento de la cultura científica en México. Asimismo, reconoce la responsabilidad de la comunidad de investigación de compartir los resultados de su trabajo con la sociedad, promoviendo el acceso al conocimiento, inspirando nuevas vocaciones científicas y contribuyendo al desarrollo de capacidades en ciencia, tecnología e innovación. </p>
+      <p><b>Objetivo general:<b> Fortalecer las capacidades científicas y tecnológicas de estudiantes, investigadores y profesionales en el estudio de la turbulencia mediante un programa de conferencias y talleres teórico-prácticos que promueva la comprensión de los fenómenos turbulentos, el uso de herramientas experimentales y de simulación, y el intercambio de conocimientos entre la comunidad científica y la sociedad.</p>
+    </div>
+    <div class="tarjeta-poster">
+      <h3>Datos generales</h3>
+      <ul class="lista-requisitos">
+        <li><strong>Fechas:</strong> 24 al 26 de agosto del 2026</li>
+        <li><strong>Modalidad:</strong> presencial y en línea (Zoom)</li>
+        <li><strong>Dirigido a</strong> estudiantes de posgrado, investigadores y profesionistas del área</li>
+        <li><strong>Costo: GRATUITO</strong> </li>
+        <li><strong>Constancia de presentación de póster</strong>  </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="cartel" class="alterna">
+  <div class="caja" style="text-align:center">
+    <h2>Convocatoria</h2>
+    <a href="cartel_turbulencias2026.png" target="_blank">
+      <img src="cartel_turbulencias2026.png" alt="Cartel del Taller Teórico-Práctico en Turbulencias 2026" style="max-width:100%;width:560px;border-radius:.5rem;box-shadow:0 8px 30px rgba(38,32,35,.18)">
+    </a>
+  </div>
+</section>
+
+<section id="fechas">
+  <div class="caja">
+    <h2>Fechas importantes</h2>
+    <ul class="fechas">
+      <li>
+        <span class="cuando">Hasta el 17 de agosto</span>
+        <span class="que">Envío de pósteres (solo para la modalidad presencial)</span>
+        <p class="detalle">Sube la información de tu póster en el formulario de inscripción indicando título, autores, adscripción, área temática, palabras clave, resumen (300 palabras máximo). Habra premios para los mejores pósteres presentados.</p>
+      </li>
+      <li>
+        <span class="cuando">Hasta el 20 de agosto</span>
+        <span class="que">Cierre de registro de asistentes</span>
+        <p class="detalle">Tanto para la modalidad presencial como en línea.</p>
+      </li>
+      <li>
+        <span class="cuando">21 de agosto</span>
+        <span class="que">Envío de enlaces de acceso</span>
+        <p class="detalle">Los inscritos en modalidad en línea recibirán por correo el enlace de Zoom.</p>
+      </li>
+      <li>
+        <span class="cuando">24 al 26 de agosto del 2026</span>
+        <span class="que">Taller Teórico-Práctico en Turbulencias 2026</span>
+        <p class="detalle">Sesiones teóricas, prácticas y presentación de pósteres.</p>
+      </li>
+      <li>
+        <span class="cuando">28 de agosto al 27 de noviembre del 2026</span>
+        <span class="que">Recepción de artículos en extenso</span>
+        <p class="detalle">Los participantes que presentaron sus pósteres podrán enviar artículo para su publicación en las memorias del taller.</p>
+      </li>	
+    </ul>
+  </div>
+</section>
+
+<section id="programa" class="alterna">
+  <div class="caja">
+    <h2>Programa</h2>
+    <div class="dias">
+      <article class="dia">
+        <span class="fecha-dia">Lunes 24 de agosto</span>
+        <h3>[Día 1. Turbulencia: simulación y arte]</h3>
+        <ul>
+          <li>[Registro] 8:00 am a 8:40 am </li>
+          <li>[Inauguración del evento] 8:40 am a 9:00 am </li>
+          <li>[Conferencia magistral: Turbulencia en el ARTE] 9:00 am a 10:00 am </li>
+          <li>[Conferencia magistral: Vortices] 10:00 am a 11:00 am </li>
+          <li>[Conferencia magistral: Dr. Hector Mejia Diaz] 11:00 am a 12:00 pm</li>
+          <li>[Comida] 12:00 pm a 12:40 pm </li>
+          <li>[Taller del Dr. Hugo Arcos Gutiérrez] 13:00 pm a 15:00 pm</li>
+	  <li>[Presentación de pósteres] 15:00 pm a 16:30 pm</li>
+        </ul>
+      </article>
+      <article class="dia">
+        <span class="fecha-dia">Martes 25 de agosto</span>
+        <h3>[Día 2. Física estructural y sistemas complejos ]</h3>
+        <ul>
+          <li>[Registro] 8:00 am a 9:00 am </li>
+          <li>9:00 am a 10:00 am  [Ponencia del Dr. Efrain Carpintero Moreno]</li>
+          <li>10:00 am a 11:00 am [Ponencia del Dra. Martha Angelica Cano Figueroa]</li>
+          <li>11:00 am a 12:00 pm [Ponencia del Dr. Gerardo Garcia Naumis]</li>
+          <li>12:00 pm a 12:40 pm [Comida]</li>
+          <li>13:00 pm a 15:00 pm [Taller del Ing. Braulio Alejandro Renteria Ramirez]</li>
+	  <li>15:00 pm a 16:30 pm [Presentación de pósteres]</li>
+        </ul>
+      </article>
+      <article class="dia">
+        <span class="fecha-dia">Miércoles 26 de agosto</span>
+        <h3>[Inestabilidades y patrones turbulentos]</h3>
+        <ul>
+          <li>8:00 am a 9:00 am   [Registro]</li>
+          <li>9:00 am a 10:00 am  [Ponencia del Mtro. Giovani Vidal Flores]</li>
+          <li>10:00 am a 11:00 am [Ponencia del Dr. Antonio de Jesús Flores Moreno]</li>
+          <li>11:00 am a 12:00 pm [Ponencia del Dra. Elsa María de la Calleja Mora]</li>
+          <li>12:00 pm a 12:40 pm [Comida]</li>
+          <li>13:00 pm a 15:00 pm [Taller del Mtro. Julio Cesar Sanchez Jimenez]</li>
+	  <li>15:00 pm a 16:00 pm [Evaluación y premiación de pósteres]</li>
+          <li>16:00 pm a 16:30 pm [Cierre del evento]</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="posteres">
+  <div class="caja dos-col">
+    <div>
+      <h2>Presentación de pósteres</h2>
+      <p>Los participantes interesados podrán presentar un póster con avances o resultados de investigación relacionados con dinámica de fluidos y turbulencia. Cada expositor recibirá una <strong>constancia de presentación de póster</strong>.</p>
+      <br>
+      <p>El envío se realiza en el mismo <a class="enlace" href="[ENLACE_DEL_FORMS]">formulario de inscripción</a>, a más tardar el <strong>17 de agosto de 2026</strong>.</p>
+    </div>
+    <div class="tarjeta-poster">
+      <h3>Requisitos del póster</h3>
+      <ul class="lista-requisitos">
+        <li>Formato [PDF, tamaño y orientación por definir]</li>
+        <li>Título, autores y adscripción institucional</li>
+        <li>[Resumen de máximo N palabras]</li>
+        <li>[Área temática]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="inscripcion" class="banda-cta">
+  <div class="caja">
+    <h2>Inscripciones abiertas</h2>
+    <p>El registro es en línea y toma menos de cinco minutos. Al completarlo recibirás un correo de confirmación con los detalles de tu participación.</p>
+    <a class="btn" href="https://forms.office.com/r/fpPkiBpXEu">Ir al formulario de inscripción</a>
+  </div>
+</section>
+
+<section id="sede">
+  <div class="caja dos-col">
+    <div class="contacto">
+      <h2>Sede y contacto</h2>
+      <p><strong>Sede:</strong> CIATEQ Retablo — CIATEQ Retablo, San Agustín del Retablo 150, Constituyentes Fovissste, 76150 Santiago de Querétaro, Querétaro</p>
+      <p><strong>Modalidad en línea:</strong> vía Zoom (el enlace se envía por correo a los inscritos)</p>
+      <p><strong>Informes:</strong> <a class="enlace" href="mailto:jose.carvajal@ciateq.mx">jose.carvajal@ciateq.mx</a></p>
+      <p><strong>Comité organizador:</strong> </p>
+      <p><strong>Editores:</strong> </p>
+      <p>Dra. Elsa María de la Calleja Mora</p>
+      <p><strong>Equipo de compilación:</strong> </p>
+      <p>Dr. José Eduardo Carvajal Rubio</p>
+      <p>Mtro. Giovanni Vidal Flores</p>
+      <p>Mtro. Giovanni Vidal Flores</p>
+    </div>
+    <div>
+      <h2>¿Cómo llegar?</h2>
+      <p>[Aquí puede insertarse un mapa de Google Maps con un iframe, o una fotografía de la sede con indicaciones de acceso y estacionamiento.]</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Taller Teórico-Práctico en Turbulencias 2026 <span>·</span> CIATEQ A.C., Centro de Tecnología Avanzada <span>·</span> Con el apoyo de Secihti</p>
+</footer>
+
+</body>
+</html>
   }
   nav .marca{color:var(--blanco);font-weight:700;font-size:.95rem;letter-spacing:.02em}
   nav .marca span{color:var(--gris-claro)}
