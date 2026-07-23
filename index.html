@@ -172,6 +172,38 @@
     font-family:"Archivo",sans-serif;
   }
 
+  /* ---------- Resúmenes (acordeones) ---------- */
+  .resumenes{display:grid;gap:.8rem}
+  .resumenes h3.grupo{
+    color:var(--gris);font-size:.85rem;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;margin:1.4rem 0 .2rem;
+  }
+  .resumenes details{
+    background:var(--blanco);
+    border:1px solid #E4DED8;border-left:5px solid var(--guinda);
+    border-radius:.5rem;box-shadow:0 3px 12px rgba(38,32,35,.06);
+  }
+  .resumenes summary{
+    cursor:pointer;list-style:none;position:relative;
+    padding:1rem 2.8rem 1rem 1.2rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .resumenes summary::-webkit-details-marker{display:none}
+  .resumenes summary::after{
+    content:"+";position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:1.4rem;color:var(--guinda);
+  }
+  .resumenes details[open] summary::after{content:"–"}
+  .resumenes .ponente{
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--gris);
+  }
+  .resumenes .titulo{
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:1.02rem;color:var(--guinda);
+  }
+  .resumenes .cuerpo{padding:0 1.2rem 1.2rem;font-size:.95rem;text-align:justify}
+  .resumenes .cuerpo p{margin-bottom:.8rem}
+
   /* ---------- Banda de inscripción ---------- */
   .banda-cta{
     background:linear-gradient(120deg,var(--guinda-oscuro),var(--guinda));
@@ -379,6 +411,105 @@
         <li>Resumen de máximo 300 palabras</li>
         <li>Formato: [tamaño y orientación por definir]</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="resumenes">
+  <div class="caja">
+    <h2>Conferencias magistrales y talleres</h2>
+    <div class="resumenes">
+
+      <h3 class="grupo">Conferencias magistrales</h3>
+
+      <details>
+        <summary>
+          <span class="ponente">Malinalli Wong Rueda</span>
+          <span class="titulo">La física en el arte: aportaciones de Leonardo da Vinci, Van Gogh y Pollock en el área de la dinámica de fluidos</span>
+        </summary>
+        <div class="cuerpo">
+          <p>En este seminario se presenta la relación entre la física y el arte desde la perspectiva de la mecánica de fluidos, analizando cómo los principios que describen el movimiento de los fluidos han influido tanto en el desarrollo científico como en la creación artística. Particularmente se revisarán las aportaciones materiales y tecnológicas que llevan al desarrollo de diversas técnicas pictóricas dentro de la historia del arte, analizando como casos particulares la obra de Leonardo da Vinci, Vincent van Gogh, David Alfaro Siqueiros y Jackson Pollock.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Dr. Isaías E. Garduño Olvera</span>
+          <span class="titulo">De la reología computacional a la oceanografía: retos de modelar turbulencia en distintos regímenes de flujo</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Simular numéricamente el comportamiento de un flujo turbulento implica enfrentar retos comunes —selección del modelo de cierre de turbulencia, definición de condiciones de frontera, validación con datos experimentales— independientemente del contexto de aplicación. Esta charla parte de la experiencia acumulada en la simulación de flujos viscosos y viscoelásticos en procesos de manufactura, como el moldeo por inyección de polímeros, para discutir cómo estas mismas herramientas y criterios de modelado se trasladan al estudio de un fenómeno muy distinto: la turbulencia generada por el oleaje marino.</p>
+          <p>Se presentan las similitudes y diferencias metodológicas entre ambos dominios: mientras que en procesos industriales el interés suele centrarse en la predicción de defectos o en el llenado de una cavidad, en el estudio del oleaje costero el objetivo es caracterizar la transferencia de energía entre escalas turbulentas mediante modelos RANS y LES, con miras a evaluar el potencial energético del recurso undimotriz. Se abordan también los retos particulares de trabajar con geometrías, condiciones de frontera y escalas espaciotemporales propias de un dominio oceánico abierto, en contraste con los dominios cerrados y controlados típicos de la simulación de procesos.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Dr. Héctor Miguel Mejía Díaz</span>
+          <span class="titulo">Técnicas numéricas para la simulación de inestabilidades hidrodinámicas</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Las inestabilidades hidrodinámicas constituyen uno de los mecanismos fundamentales que conducen a la formación de vórtices y al desarrollo de la turbulencia en los fluidos. En esta charla se presentarán los fundamentos matemáticos y computacionales utilizados para su simulación numérica, con énfasis en la formulación vorticidad–función de corriente para fluidos incompresibles. Se discutirán aspectos relacionados con la discretización mediante diferencias finitas, la integración temporal con esquemas de Runge–Kutta, la resolución de la ecuación de Poisson mediante transformadas rápidas de Fourier y los criterios de estabilidad numérica. Como ejemplo representativo se analizará la inestabilidad de Kelvin–Helmholtz, mostrando la evolución de la vorticidad y la formación de estructuras coherentes mediante simulaciones computacionales. Finalmente, se comentará cómo estas técnicas pueden extenderse al estudio de otras inestabilidades hidrodinámicas y problemas relacionados con la transición hacia la turbulencia.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Luis Laguna-Zarate</span>
+          <span class="titulo">Percepción remota y modelación numérica de la dispersión de plumas térmicas costeras: el caso de la planta nucleoeléctrica de Laguna Verde</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Las centrales eléctricas costeras utilizan agua de mar como medio de enfriamiento y la devuelven al ambiente con una temperatura elevada, generando plumas térmicas que pueden alterar los ecosistemas marinos y, si recirculan hacia la estructura de toma, afectar la eficiencia operativa de la planta. Esta charla presenta un estudio que combina percepción remota satelital y modelación numérica para caracterizar la dispersión de la pluma térmica de la central nucleoeléctrica de Laguna Verde (Veracruz, México), la única planta nuclear del país.</p>
+          <p>Mediante imágenes térmicas del satélite Landsat 8 (banda TIRS) se reconstruyó la temperatura superficial del mar para cuatro escenarios estacionales, validando los resultados contra mediciones de campo. Estos datos se emplearon para calibrar simulaciones hidrodinámicas y térmicas con el modelo Delft3D-FLOW en el escenario más crítico, en el que la pluma tiende a recircular hacia la toma de agua. Se comparó el desempeño de tres esquemas de cierre de turbulencia —el modelo algebraico de viscosidad de remolino (AEM) y los modelos k−L y k−ε— así como una contribución tipo LES (esquema HLES).</p>
+          <p>Los resultados muestran que el modelo k−ε presenta el mejor ajuste global, mientras que k−L sobreestima las cantidades turbulentas y HLES subestima el área de dispersión, al ser un esquema específicamente bidimensional. El análisis con números adimensionales evidencia una transición de un régimen dominado por convección forzada cerca de la descarga hacia uno de convección mixta en campo lejano. La charla concluye destacando el valor de acoplar percepción remota y modelación numérica para calibrar y validar modelos costeros en sitios con escasas mediciones in situ, con implicaciones para el desempeño operativo de plantas termoeléctricas y la evaluación de impacto ambiental.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Dra. Martha Angélica Cano Figueroa</span>
+          <span class="titulo">Patrones estacionales del oleaje en costas mexicanas: análisis estadístico de la frecuencia y la altura de ola</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Las olas son un elemento fundamental en la dinámica de nuestras costas, ya que afectan el transporte de sedimentos, la erosión de las playas y el funcionamiento de la infraestructura marítima. En México, la vasta línea costera y la interacción de diversos sistemas atmosféricos y oceanográficos dan lugar a una notable variabilidad estacional en el comportamiento de las olas. Este estudio tuvo como objetivo caracterizar esa variabilidad en diferentes regiones costeras del país, analizando la relación entre la frecuencia y la altura media de las olas a lo largo de las cuatro estaciones del año. Para ello, se emplearon datos de estaciones oceanográficas representativas ubicadas en el océano Pacífico, el golfo de California, el golfo de México y el mar Caribe. Los datos fueron analizados utilizando técnicas estadísticas descriptivas y análisis de correlación, teniendo en cuenta la influencia de factores climáticos como la temporada de huracanes, los frentes fríos y los patrones monzónicos. Los resultados revelan diferencias estacionales significativas, con alturas y energía de las olas más elevadas durante la primavera y el verano, principalmente asociadas a la actividad ciclónica, y condiciones más moderadas en invierno, dominadas por el oleaje generado por frentes fríos. Estos hallazgos ayudan a comprender mejor el comportamiento estacional de las olas en las costas mexicanas y ofrecen información valiosa para la gestión del riesgo costero, la planificación territorial y el diseño de infraestructura marítima.</p>
+          <p><em>Palabras clave:</em> oleaje, variabilidad estacional, altura de ola, frecuencia de ola, zonas costeras, energía del oleaje, análisis estadístico, costas mexicanas.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Dr. Efraín Carpintero Moreno</span>
+          <span class="titulo">Simulación numérica de alta fidelidad mediante Smoothed Particle Hydrodynamics (SPH) para energías renovables marinas</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Las tecnologías de energías renovables marinas (Offshore Renewable Energy, ORE) requieren procesos de validación cada vez más rigurosos para acelerar su transición desde el laboratorio hasta su despliegue comercial. En este contexto, la simulación numérica de alta fidelidad basada en Smoothed Particle Hydrodynamics (SPH) se ha convertido en una herramienta clave para reproducir fenómenos hidrodinámicos altamente no lineales que resultan difíciles de modelar mediante técnicas convencionales. Esta presentación mostrará cómo el software DualSPHysics puede complementar los ensayos experimentales, proporcionando predicciones numéricas avanzadas de procesos como el rompimiento de olas, impactos por slamming, sobrepasamiento (overtopping), agua embarcada (green water), fragmentación de la superficie libre e interacción fluido-estructura-mooring. Estas capacidades permiten ampliar el rango de condiciones evaluadas, reducir el número de ensayos físicos necesarios y mejorar la interpretación de los resultados experimentales.</p>
+        </div>
+      </details>
+
+      <h3 class="grupo">Talleres</h3>
+
+      <details>
+        <summary>
+          <span class="ponente">Claudia Álvarez</span>
+          <span class="titulo">Simulación hidrodinámica de absorbedores puntuales para la generación de energía undimotriz</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Este taller ofrece un recorrido integral por la simulación hidrodinámica de absorbedores puntuales para la generación de energía undimotriz. En el bloque teórico se introducirán los fundamentos de la energía undimotriz, los principios del Método de Elementos de Frontera (BEM) y la clasificación de los dispositivos convertidores (WECs), con un énfasis especial en los PAWECs (Point Absorber Wave Energy Converters) y sus principios de funcionamiento.</p>
+          <p>En el bloque práctico, los asistentes aplicarán estos conceptos mediante la simulación numérica del caso de estudio RM3 (Reference Model 3), un absorbedor puntual de referencia, empleando WEC-Sim, un programa de código abierto para la simulación de estos dispositivos. Además, se explorará una geometría alternativa para comparar su comportamiento hidrodinámico y evaluar el rendimiento en la absorción de potencia.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="ponente">Ing. Braulio Rentería Ramírez</span>
+          <span class="titulo">Pulsorreactores y fenómenos termoacústicos</span>
+        </summary>
+        <div class="cuerpo">
+          <p>Desde las primeras observaciones de las llamadas "llamas cantoras" en el siglo XVIII y los experimentos de Pieter Rijke en el siglo XIX, la interacción entre el calor y el sonido ha despertado un gran interés científico. Estos estudios demostraron que una liberación periódica de energía, cuando se encuentra adecuadamente sincronizada con las oscilaciones de presión, puede generar y mantener ondas acústicas de gran intensidad. Durante el siglo XX, este principio encontró una de sus aplicaciones más representativas en los pulsorreactores y, actualmente, continúa siendo fundamental para comprender, aprovechar y controlar las inestabilidades de combustión presentes en turbinas de gas, motores cohete, sistemas de propulsión y dispositivos termoacústicos.</p>
+          <p>En este taller teórico-práctico, los participantes explorarán cómo la combustión, las oscilaciones de presión y la resonancia acústica pueden acoplarse para producir un sistema pulsante autosostenido. Mediante conceptos de termodinámica, dinámica de gases, transferencia de calor y resonadores de Helmholtz, cada participante diseñará, construirá y pondrá a prueba su propio pulsorreactor experimental. Finalmente, se comparará el desempeño de los diferentes diseños mediante mediciones de frecuencia, tiempo de giro y RPM de una pequeña turbina. Una experiencia donde ingeniería, fuego y sonido trabajan en sincronía para revelar la fascinante física de los fenómenos termoacústicos.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
